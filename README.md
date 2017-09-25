@@ -4,13 +4,13 @@ C implementation of NSA's SPECK block cipher.
 ## DISCLAIMER
 *THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED*
 
-This project was started to study the SPECK lightweight block cipher outlined in the NSA paper available (included in this repo), also hosted: https://eprint.iacr.org/2013/404.pdf.
+This project was started to study the SPECK lightweight block cipher outlined in the NSA paper (included in this repo), also hosted: https://eprint.iacr.org/2013/404.pdf.
 
 I make no guarantees as to the correctness of this implementation.  This code should not be used for any purpose other than study.
 
 ## Implementation
 
-This program implements the SPECK cipher with a 128-bit key size and a 128-bit block size.  It was designed and compiled for x86_64 Linux.
+This program implements the SPECK cipher with a 128-bit key size and a 128-bit block size.  It was designed and compiled on x86_64 Linux.
 
 ## Files
  o Makefile:            Makefile for this project.
