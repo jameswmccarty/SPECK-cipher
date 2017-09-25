@@ -28,18 +28,19 @@ To compile all, type "make."
 ### SPECK
 ./speck [-h] -k keyfile [-e|-d] -i infile -o outfile [-x]  
   
-flags specify:  
-        -h              print help screen, then exit.  
-        -k keyfile      A 128-bit key in the format 0...0 (32 hex chars, no leading 0x). Note this is a text file, not a binary file.  
-        -e              encrypt the input file.  
-        -d              decrypt the input file.  
-        -i              input file path.  
-        -o              output file path.  
-        -x              perform key pre-expansion (vice on the fly).  
+#### flags specify:
++ -h              print help screen, then exit.  
++ -k keyfile      A 128-bit key in the format 0...0 (32 hex chars, no leading 0x). Note this is a text file, not a binary file.  
++ -e              encrypt the input file.  
++ -d              decrypt the input file.  
++ -i              input file path.  
++ -o              output file path.  
++ -x              perform key pre-expansion (vice on the fly).  
+
  ### TESTVECT
- ./testvect             There are no input options for this program, but it will produce  
-                        vect_cipher128.hex and vect_plain128.hex in the directory where it is  
-                        run.  
+ ./testvect             
+  
+ There are no input options for this program, but it will produce vect_cipher128.hex and vect_plain128.hex in the directory where it is run.  
                         
 ### Example Useage
 
@@ -50,6 +51,6 @@ flags specify:
 ./speck -k key_128.key -d -i output.enc -o plain_vect.hex -x | Same as above with key pre-expansion.
  
  ## Known Issues
-  o Program only reads/writes a 128-bit block size.  This may lead to null bytes at the end of some files.  
-  o Makes no attempt to correct endedness related issues on file reads/writes.  Encrypted files may not be portable across systems.  
-  o Only implements 128-bit keysize / blocksize.  
+- Program only reads/writes a 128-bit block size.  This may lead to null bytes at the end of some files.  
+- Makes no attempt to correct endedness related issues on file reads/writes.  Encrypted files may not be portable across systems.  
+- Only implements 128-bit keysize / blocksize.  
