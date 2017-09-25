@@ -251,11 +251,10 @@ void parse_args (int argc, char **argv, ctrl_struct *options)
 
 int main(int argc, char **argv) 
 {
-    /*uint64_t const testct[2] = {0x7860fedf5c570d18, 0xa65d985179783265};*/ /* enciphered text vector */	
 	uint64_t fileKey[2]; /* hold key from input file */
 	uint64_t ct[2]; /* will always be results buffer */
 	uint64_t pt[2]; /* will always be input buffer */
-    uint64_t Kext[ROUNDS*2]; /* holds extended key */
+    	uint64_t Kext[ROUNDS*2]; /* holds extended key */
 	ctrl_struct options; /* program flow control */
 	int readblocks = 1; /* true if still input left to read */
 	int readstatus;
@@ -299,7 +298,7 @@ int main(int argc, char **argv)
 
 	/* read a 128-byte block from our input file         *
 	 * encrypt or decrypt the block with the in place    *
-     * or expanded key, then write it to the output file *
+     	 * or expanded key, then write it to the output file *
 	 * loop until EOF or an error.                       *
 	 *                                                   */
 	while(readblocks) 
@@ -363,9 +362,9 @@ int main(int argc, char **argv)
 	/* and early testing code */
 	/* uint64_t const K[2]  = {0x0706050403020100, 0x0f0e0d0c0b0a0908};*/ /* 128-bit key */
 	/* uint64_t const pt[2] = {0x7469206564616d20, 0x6c61766975716520};*/ /* plaintext vector */
-    /* uint64_t const rt[2] = {0x7860fedf5c570d18, 0xa65d985179783265};*/ /* enciphered text vector */	
+    	/* uint64_t const rt[2] = {0x7860fedf5c570d18, 0xa65d985179783265};*/ /* enciphered text vector */	
    	
-    /*encrypt_ext(&pt[0], &ct[0], &K[0]);
+    	/*encrypt_ext(&pt[0], &ct[0], &K[0]);
 	printf("0x%0lx ", ct[1]);
 	printf("0x%0lx\n", ct[0]);
 
