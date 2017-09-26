@@ -309,7 +309,8 @@ int main(int argc, char **argv)
 		pt[1] = 0;
 		/* read an input block */
 		/* two 64 bit chucks per block */
-		readstatus = fread(&pt[0],sizeof(uint64_t),2,in);
+		/* read in byte size increments */
+		readstatus = fread(&pt[0],1,sizeof(uint64_t)*2,in);
 		if(readstatus == 0) 
 		{
 			/* reached EOF */
@@ -318,7 +319,7 @@ int main(int argc, char **argv)
 			/* some error occured */
 			printf("Invalid file read. Quitting.\n");
 			exit(EXIT_FAILURE);
-		} else if(readstatus == 1) {
+		} else if(readstatus < sizeof(uint64_t)*2) {
 			/* something to write out, but on last block */
 			readblocks = 0;
 		} /* readstatus must have been 2...keep going */
